@@ -15,7 +15,9 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerIncludes();
         $this->registerModelEvents();
 
-        $this->loadViewsFrom(__DIR__ . '../resources/views', 'core');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'core');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'core');
     }
 
     /**
