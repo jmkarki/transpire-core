@@ -1,0 +1,30 @@
+
+{
+    "name": "transpire/core",
+    "description": "Transpire Core module provides, several reusable components, like login, admin panel and other more services.",
+    "keywords": ["transpire", "core", "Scaffold"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sujip Thapa",
+            "email": "sudiptpa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "dompdf/dompdf": "^0.6.1",
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Transpire\\Core\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
