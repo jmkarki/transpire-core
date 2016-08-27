@@ -35,9 +35,9 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function registerIncludes()
     {
-        foreach (new \DirectoryIterator(__DIR__ . '/../../routes/') as $fileInfo) {
+        foreach (new \DirectoryIterator(__DIR__ . '/../routes/') as $fileInfo) {
             if (!$fileInfo->isDot()) {
-                include __DIR__ . '/routes/' . $fileInfo->getFilename();
+                include __DIR__ . '/../routes/' . $fileInfo->getFilename();
             }
         }
 
