@@ -37,11 +37,11 @@ class CoreServiceProvider extends ServiceProvider
     {
         foreach (new \DirectoryIterator(__DIR__ . '/../../routes/') as $fileInfo) {
             if (!$fileInfo->isDot()) {
-                include __DIR__ . '/../../routes/' . $fileInfo->getFilename();
+                include __DIR__ . '/routes/' . $fileInfo->getFilename();
             }
         }
 
-        include __DIR__ . '/../../helpers.php';
+        include __DIR__ . '/helpers.php';
     }
 
     /**
