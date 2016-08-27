@@ -1,7 +1,7 @@
 
 {
     "name": "transpire/core",
-    "description": "Transpire Core module provides, several reusable components, like login, admin panel and other more services.",
+    "description": "transpire core module provides, several reusable components, like login, admin panel and other more services.",
     "keywords": ["transpire", "core", "Scaffold"],
     "license": "MIT",
     "authors": [
@@ -13,6 +13,8 @@
     "require": {
         "php": ">=5.5.9",
         "dompdf/dompdf": "^0.6.1",
+        "laravel/framework": "5.3.*",
+        "php": ">=5.6.4",
     },
     "autoload": {
         "classmap": [
