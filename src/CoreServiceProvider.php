@@ -14,6 +14,8 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->registerIncludes();
         $this->registerModelEvents();
+
+        $this->loadViewsFrom(__DIR__ . '../resources/views', 'core');
     }
 
     /**
