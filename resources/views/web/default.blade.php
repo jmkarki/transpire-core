@@ -7,7 +7,7 @@
             {{ $title or "" }}
         </title>
 
-        @include('core::meta.meta')
+        @include('core::web.meta.meta')
 
         @if (env('environment') == 'local')
             <meta name="robots" content="noindex, nofollow" />
@@ -24,7 +24,6 @@
         @show
             <link rel="stylesheet" type="text/css" href="{{ asset(elixir('assets/css/app.css')) }}">
         @yield('head')
-
 
     </head>
     <body>
