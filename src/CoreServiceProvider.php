@@ -1,4 +1,5 @@
 <?php
+
 namespace Transpire\Core;
 
 use Illuminate\Support\ServiceProvider;
@@ -15,9 +16,9 @@ class CoreServiceProvider extends ServiceProvider
         $this->registerIncludes();
         $this->registerModelEvents();
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'core');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'core');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'core');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'core');
     }
 
     /**
@@ -27,7 +28,6 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 
     /**
@@ -37,22 +37,21 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function registerIncludes()
     {
-        foreach (new \DirectoryIterator(__DIR__ . '/../routes/') as $fileInfo) {
+        foreach (new \DirectoryIterator(__DIR__.'/../routes/') as $fileInfo) {
             if (!$fileInfo->isDot()) {
-                include __DIR__ . '/../routes/' . $fileInfo->getFilename();
+                include __DIR__.'/../routes/'.$fileInfo->getFilename();
             }
         }
 
-        include __DIR__ . '/helpers.php';
+        include __DIR__.'/helpers.php';
     }
 
     /**
-     * Register the Event Subscriber(Observer) for Models
+     * Register the Event Subscriber(Observer) for Models.
      *
      * @return void
      */
     public function registerModelEvents()
     {
-
     }
 }
