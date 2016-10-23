@@ -3,7 +3,7 @@
 Auth::routes();
 
 Route::get('/', [
-    'as' => 'transpire.home',
+    'as'   => 'transpire.home',
     'uses' => 'Transpire\Core\Http\Controllers\HomeController@index',
 ]);
 
