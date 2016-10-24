@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return view('index');
     }
+
+    public function show()
+    {
+        return 'Core';
+    }
 }
