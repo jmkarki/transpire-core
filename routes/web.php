@@ -11,7 +11,9 @@ Route::get('/show', [
     'uses' => 'Transpire\Core\Http\Controllers\HomeController@show',
 ]);
 
-// Route::get('/sitemap.xml', [
-//     'as' => 'transpire.sitemap',
-//     'uses' => 'Transpire\Core\Http\Controllers\SitemapController@index',
-// ]);
+Route::get('register/verify/{token}', 'Transpire\Core\Http\Controllers\Auth\RegisterController@verify');
+
+Route::get('/sitemap.xml', [
+    'as'   => 'transpire.sitemap',
+    'uses' => 'Transpire\Core\Http\Controllers\HomeController@index',
+]);
