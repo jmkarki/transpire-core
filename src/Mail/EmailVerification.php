@@ -1,4 +1,5 @@
 <?php
+
 namespace Transpire\Core\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -23,6 +24,7 @@ class EmailVerification extends Mailable
     {
         $this->user = $user;
     }
+
     /**
      * Build the message.
      *

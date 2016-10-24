@@ -46,14 +46,15 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -61,15 +62,16 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'        => $data['name'],
+            'email'       => $data['email'],
+            'password'    => bcrypt($data['password']),
             'email_token' => str_random(10),
         ]);
     }
@@ -77,7 +79,8 @@ class RegisterController extends Controller
     /**
      * Handle a registration request for the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function postRegister(Request $request)
@@ -90,8 +93,7 @@ class RegisterController extends Controller
 
         DB::beginTransaction();
 
-        try
-        {
+        try {
             $user = $this->create($request->all());
 
             $email = new EmailVerification(new User(['email_token' => $user->email_token]));
@@ -101,7 +103,6 @@ class RegisterController extends Controller
             DB::commit();
 
             return back();
-
         } catch (Exception $e) {
             DB::rollback();
 
@@ -115,6 +116,7 @@ class RegisterController extends Controller
     public function verify($token)
     {
         User::where('email_token', $token)->firstOrFail()->verified();
+
         return redirect('login');
     }
 }
