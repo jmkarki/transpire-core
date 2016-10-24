@@ -1,5 +1,3 @@
-### Transpire Core
-
 ### Introduction
 Transpire Core is an amazing package fully featured with auth, store, api, admin, settings features built on top of Laravel v5.3,that is simple and enjoyable to use.
 
