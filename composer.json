@@ -1,0 +1,33 @@
+
+{
+    "name": "transpire/esewa",
+    "description": "Transpire Esewa provides an expressive, fluent interface to Esewa's online payment services. It handles almost all of the boilerplate payment, billing code you are dreading writing.",
+    "keywords": ["transpire", "esewa", "billing","online payment"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sujip Thapa",
+            "email": "sudiptpa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.3.*",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Transpire\\Esewa\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
